@@ -70,12 +70,15 @@ socket.on('left',name=>{
 
 //for appending messages with timestamp
 socket.on('receive', data => {
+    if (data.name === name) return; // 🔥 ignore own message
+
     append(
         `<strong>${data.name}</strong>: ${data.message}
          <span class="time">${getTime()}</span>`,
         'left'
     );
 });
+
 
 
 //if form gets submitted, send server the message
@@ -92,5 +95,6 @@ form.addEventListener('submit', (e) => {
     socket.emit('send', message);
     messageInput.value = '';
 });
+
 
 
