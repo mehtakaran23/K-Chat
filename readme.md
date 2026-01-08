@@ -1,0 +1,1 @@
+This project contains realtime chat app implemented with nodejs and socket.io

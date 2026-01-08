@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Chat Realtime Node Socket.io Chat App</title>
+    <link rel="stylesheet" href="/style.css">
+    
+
+</head>
+<body>
+
+
+
+    <nav>
+        <div class="image-container">
+        <img class="logo" src="/assets/logo.png" alt="">
+        </div>
+        <h1>Welcome to K-Chat</h1>
+        
+    </nav>
+    <div class="container">
+        
+    </div>
+
+    <div class="send">
+        <form action="javascript:void(0)" id="send-container">
+            <input type="text" name="messaging" id="messageinput" placeholder="Type your message here">
+            <button class="btn" type="submit">Send</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+</html>
