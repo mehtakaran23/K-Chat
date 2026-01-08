@@ -60,14 +60,13 @@ io.on('connection', socket => {
         socket.broadcast.emit('user-joined', name);
     });
 
-    socket.on('send', message => {
-        if (users[socket.id]) {
-            socket.broadcast.emit('receive', {
-                message,
-                name: users[socket.id]
-            });
-        }
+   socket.on('send', message => {
+    io.emit('receive', {
+        message: message,
+        name: users[socket.id]
     });
+});
+
 
     socket.on('disconnecting', () => {
         const name = users[socket.id];
@@ -82,3 +81,4 @@ io.on('connection', socket => {
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
