@@ -6,7 +6,7 @@ const messageInput=document.getElementById('messageinput');
 const messageContainer=document.querySelector(".container");
 
 //audio that will play on receiving messages
-var audio = new Audio('http://localhost:8000/assets/ringtone.mp3');
+var audio = new Audio('/assets/ringtone.mp3');
 let audioUnlocked = false;
 
 //unlock audio on first user interaction
@@ -92,4 +92,5 @@ form.addEventListener('submit', (e) => {
     socket.emit('send', message);
     messageInput.value = '';
 });
+
 
